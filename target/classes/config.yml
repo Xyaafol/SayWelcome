@@ -1,0 +1,71 @@
+#######################################################################################################
+# Version: 1.1.1                                                                                      #
+# By: Xyaafol                                                                                         #
+# Commands:                                                                                           #
+# /swreload - Reloads the plugin with settings changed in this file. Requires OP.                     #
+#######################################################################################################
+
+#Time in seconds that the players should be able to be rewarded by sending a welcome/welcome back message
+MessageTime:
+  Welcome: 30
+  WelcomeBack: 10
+
+#Set to true in order to enable rewards ONLY for sending the exact messages listed below.
+#Will make it caps sensitive and will not allow anything else to be in the message.
+#By default the value of false will mean that the players message will only need to contain the string that is in the messages list.
+#Also ignores capitalization in the messages whilst set to false.
+ExactMessage: false
+
+
+
+#Enables a message that counts down the remaining time that players have to welcome/welcome back a player.
+#Displays as an actionbar. Use the placeholder <time> to indicate where the timer should be.
+ActionBar:
+  Enabled: true
+  Message: "&b&lSayWelcome: <time> seconds remaining."
+
+
+#Set to true in order to allow the plugin to reward players multiple times for one message.
+#e.g. Player sends a message with 'hey welcome back' with list of accepted messages containing 'hey' 'welcome' 'back' 'welcome back'
+#would result in the player getting 4 sets of the rewards.
+#Default set to false.
+MultipleRewards: false
+
+
+#Lists the messages that will be rewarded when said after a player first joins.
+MessagesFirstJoin:
+  - "welcome"
+  - "hey"
+
+
+#Commands for the console to run for each player that says welcome when a player first joins.
+#Use the placeholder <player> to indicate the player that sent the message.
+#List as many commands as you want. Do not use /
+#Use msgplayer to send the player a message - doesn't run as console, plugin picks it up manually.
+RewardsFirstJoin:
+  - "give <player> diamond 1"
+  - "msgplayer &bThank you for saying Welcome!"
+
+
+#Special rewards for using a specific message - case sensitive.
+#Only applies to fist joins.
+SpecialRewardMessage: "Welcome <newplayer> to the server!"
+SpecialRewards:
+  - "give <player> diamond 2"
+
+
+#Lists the messages that will be rewarded when said after a player joins back.
+MessagesWelcomeBack:
+  - "wb"
+  - "hey"
+  - "welcome back"
+  - "welcome"
+  - "back"
+
+
+#Commands for the console to run for each player that says welcome back to a player.
+#Use the placeholder <player> to indicate the player that sent the message.
+#List as many commands as you want. Do not use /
+#Use msgplayer to send the player a message - doesn't run as console, plugin picks it up manually.
+RewardsWelcomeBack:
+  - "eco add <player> 100"
